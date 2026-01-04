@@ -7,14 +7,18 @@
 url="https://ftp.gnu.org/gnu/libc/glibc-2.42.tar.gz"
 
 configure() {
-    ./configure --prefix="/usr"
+    mkdir -p glibc-build
+    cd glibc-build
+    ../configure --prefix="/usr"
 }
 
 build() {
+    cd glibc-build
     make -j$(nproc)
 }
 
 install() {
+    cd glibc-build
     make install DESTDIR="$1"
 }
 
