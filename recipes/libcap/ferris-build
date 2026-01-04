@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. "$2"
+
+url="https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-2.77.tar.gz"
+
+configure() {
+    :
+}
+
+build() {
+    make -j$(nproc) prefix=/usr
+}
+
+install() {
+    make install DESTDIR="$1" prefix=/usr
+}
+
+export CFLAGS="-O2"
+export CXXFLAGS="$CFLAGS"
+
+start_installation "$1" "$url"

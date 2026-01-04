@@ -1,0 +1,25 @@
+#!/bin/sh
+
+. "$2"
+
+url="https://github.com/iputils/iputils/archive/refs/tags/20250605.tar.gz"
+
+configure() {
+    ./configure \
+        --prefix="/usr" \
+        --disable-static \
+        --enable-shared
+}
+
+build() {
+    make -j$(nproc)
+}
+
+install() {
+    make DESTDIR="$1" install
+}
+
+export CFLAGS="-O2"
+export CXXFLAGS="$CFLAGS"
+
+start_installation "$1" "$url"

@@ -1,0 +1,5 @@
+{
+    "name": "curl",
+    "version": "8.17.0",
+    "deps": ["glibc", "openssl", "zlib", "libidn2"]
+}

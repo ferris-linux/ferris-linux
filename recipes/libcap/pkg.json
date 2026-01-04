@@ -1,0 +1,5 @@
+{
+    "name": "libcap",
+    "version": "2.77",
+    "deps": ["glibc"]
+}

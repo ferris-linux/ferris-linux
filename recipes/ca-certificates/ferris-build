@@ -1,0 +1,25 @@
+#!/bin/sh
+
+. "$2"
+
+url="https://github.com/mozilla/gecko-dev/raw/master/security/nss/lib/ckfw/builtins/certdata.txt"
+
+configure() {
+    :
+}
+
+build() {
+    :
+}
+
+install() {
+    mkdir -p "$1/etc/ssl/certs"
+    mkdir -p "$1/usr/share/ca-certificates"
+
+    curl -L https://curl.se/ca/cacert.pem -o "$1/etc/ssl/certs/ca-certificates.crt"
+
+    ln -sf /etc/ssl/certs/ca-certificates.crt \
+        "$1/usr/share/ca-certificates/ca-certificates.crt"
+}
+
+start_installation "$1" "$url"
