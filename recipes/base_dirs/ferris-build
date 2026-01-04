@@ -1,0 +1,17 @@
+#!/bin/sh
+
+. "$2"
+
+configure() {
+   echo ""configure
+}
+
+build() {
+    echo "build"
+}
+
+install() {
+    mkdir -p "$1/root" "$1/usr" "$1/etc" "$1/usr/share" "$1/home" "$1/bin" "$1/lib" 
+}
+
+install "$1"
