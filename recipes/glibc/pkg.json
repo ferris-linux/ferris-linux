@@ -1,4 +1,5 @@
 {
     "name": "glibc",
-    "version": "2.42"
+    "version": "2.42",
+    "deps": {}
 }
