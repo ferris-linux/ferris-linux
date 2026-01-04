@@ -1,1 +1,1 @@
-main repository with basic packages
+Ferris linux
