@@ -2,7 +2,7 @@
 
 . "$2"
 
-url="https://mirror.dogado.de/gnu/bash/bash-5.3.tar.gz"
+url="https://ftpmirror.gnu.org/gnu/bash/bash-5.3.tar.gz"
 
 configure() {
     ./configure --prefix="/usr" --without-bash-malloc --disable-readline --with-curses 

@@ -4,7 +4,7 @@
 
 . "$2"
 
-url="https://mirror.dogado.de/gnu/libc/glibc-2.42.tar.gz"
+url="https://ftpmirror.gnu.org/libc/glibc-2.42.tar.gz"
 
 configure() {
     mkdir -p glibc-build
