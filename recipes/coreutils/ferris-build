@@ -9,7 +9,7 @@ configure() {
 }
 
 build() {
-    make PROFILE=release -j$(nproc)
+    make PROFILE=release-fast -j$(nproc)
 }
 
 install() {
