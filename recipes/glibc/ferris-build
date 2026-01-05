@@ -25,7 +25,7 @@ install() {
     echo "Creating symlinks"
     mkdir -p usr/lib
     ln -sf usr/lib lib
-    ln -sf usr/lib lib64
+    ln -sf usr/lib64 lib64
     ln -sf usr/bin bin
 }
 
