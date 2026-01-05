@@ -9,7 +9,7 @@ url="https://ftpmirror.gnu.org/libc/glibc-2.42.tar.gz"
 configure() {
     mkdir -p glibc-build
     cd glibc-build
-    ../configure --prefix="/usr" --disable-debug --disable-nls --disable-profile --libdir=/lib
+    ../configure --prefix="/usr" --disable-debug --disable-nls --disable-profile --libdir=/usr/lib
 }
 
 build() {
@@ -24,8 +24,10 @@ install() {
     rm -rf lib bin
     echo "Creating symlinks"
     mkdir -p usr/lib
+    mkdir -p usr/lib64
     ln -sf usr/lib lib
     ln -sf usr/bin bin
+    ln -s usr/lib64 lib64
 }
 
 export CFLAGS="-O2"
