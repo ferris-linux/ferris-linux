@@ -28,7 +28,6 @@ install() {
     ln -sf usr/lib lib
     ln -sf usr/bin bin
     cd usr
-    cp -rf lib64/* lib
     rm -rf lib64
     ln -sf lib lib64
 }

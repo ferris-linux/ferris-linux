@@ -3,11 +3,11 @@
 . "$2"
 
 configure() {
-   echo ""configure
+   :
 }
 
 build() {
-    echo "build"
+    :
 }
 
 install() {
