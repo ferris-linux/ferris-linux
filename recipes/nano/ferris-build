@@ -1,0 +1,23 @@
+#!/bin/sh
+
+. "$2"
+
+url="https://ftp.gnu.org/gnu/nano/nano-8.7.tar.gz"
+
+configure() {
+    ./configure \
+        --prefix="/usr"
+}
+
+build() {
+    make -j$(nproc)
+}
+
+install() {
+    make DESTDIR="$1" install
+}
+
+export CFLAGS="-O2"
+export CXXFLAGS="$CFLAGS"
+
+start_installation "$1" "$url"
