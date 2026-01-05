@@ -1,0 +1,5 @@
+{
+    "name": "nghttp2",
+    "version": "2.3.6",
+    "deps": ["glibc"]
+}

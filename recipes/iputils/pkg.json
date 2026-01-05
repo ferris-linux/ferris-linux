@@ -1,5 +1,5 @@
 {
     "name": "iputils",
     "version": "20250605",
-    "deps": ["glibc", "libcap"]
+    "deps": ["glibc", "libcap", "unistring"]
 }

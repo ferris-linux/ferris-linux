@@ -1,5 +1,5 @@
 {
     "name": "curl",
     "version": "8.17.0",
-    "deps": ["glibc", "openssl", "zlib", "libidn2"]
+    "deps": ["glibc", "openssl", "zlib", "libidn2","nghttp2"]
 }
