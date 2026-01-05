@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. "$2"
+
+url="https://github.com/uutils/coreutils/archive/refs/tags/0.5.0.tar.gz"
+
+configure() {
+    :
+}
+
+build() {
+    make PROFILE=release -j$(nproc)
+}
+
+install() {
+    make PROFILE=release DESTDIR="$1" install
+}
+
+export CFLAGS="-O2"
+export CXXFLAGS="$CFLAGS"
+
+start_installation "$1" "$url"
