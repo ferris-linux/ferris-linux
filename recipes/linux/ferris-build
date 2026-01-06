@@ -13,7 +13,7 @@ build() {
 }
 
 install() {
-    make INSTALL_PATH="$1" install
+    make INSTALL_PATH="$1/boot" install
 }
 
 export CFLAGS="-O2"
