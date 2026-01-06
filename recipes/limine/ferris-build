@@ -1,0 +1,28 @@
+#!/bin/sh
+
+. "$2"
+
+url="https://github.com/limine-bootloader/limine/archive/refs/tags/v10.6.1-binary.tar.gz"
+
+configure() {
+    :
+}
+
+build() {
+    make
+}
+
+install() {
+	mkdir -p $1/boot
+	mkdir -p $1/boot/limine
+	cp -v "$script_dir/limine.conf" "$1/boot/limine/"
+	mkdir -p "$1/EFI/BOOT"
+	cp -v limine-bios.sys limine-bios-cd.bin limine-uefi-cd.bin "$1/boot/limine/"
+	cp -v BOOTX64.EFI "$1/EFI/BOOT/"
+	cp -v BOOTIA32.EFI "$1/EFI/BOOT/"
+}
+
+export CFLAGS="-O2"
+export CXXFLAGS="$CFLAGS"
+
+start_installation "$1" "$url"

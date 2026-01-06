@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd /bin
+rl="$(readlink sh)"
+exec "$(realpath $rl)"

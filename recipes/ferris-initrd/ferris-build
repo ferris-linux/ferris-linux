@@ -1,0 +1,22 @@
+#!/bin/sh
+
+. "$2"
+
+
+configure() {
+    :
+}
+
+build() {
+    :
+}
+
+install() {
+    cp -rf "$script_dir/init" "$1/init"
+    chmod +x "$1/init"
+}
+
+export CFLAGS="-O2"
+export CXXFLAGS="$CFLAGS"
+
+install "$1"
