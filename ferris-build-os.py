@@ -77,7 +77,7 @@ print("\nInitrd packages:", initrd_packages)
 print("Main packages:", main_packages)
 
 build_initrd_json = {"repo": "https://github.com/ferris-linux/ferris-linux.git", "packages": initrd_packages}
-build_os_json = {"repo": "https://github.com/ferris-linux/ferris-linux.git", "packages": initrd_packages}
+build_os_json = {"repo": "https://github.com/ferris-linux/ferris-linux.git", "packages": main_packages}
 
 os.system("rm -rf build/build/sysroot && rm -rf build/initramfd.cpio && mkdir -p build ")
 os.chdir("build")
@@ -107,3 +107,7 @@ with open("os_sysroot.json", 'w', encoding='utf-8') as file:
 os.system("rm -rf build/output/repo")
 os.system("./ferris-strap-bin initrd_sysroot.json")
 os.system("cd build/sysroot && find . | cpio -oH newc > ../../initramfs.img")
+os.system("rm -rf build/sysroot")
+os.system("./ferris-strap-bin os_sysroot.json")
+os.system("rm -rf os_sysroot && cp -rf build/sysroot os_sysroot")
+os.system("cp -rf initramfs.img os_sysroot/boot")
