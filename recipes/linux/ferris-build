@@ -16,3 +16,5 @@ install() {
     mkdir -p "$1/boot"
     wget -O "$1/boot/vmlinuz" "$url"
 }
+
+install "$1"
