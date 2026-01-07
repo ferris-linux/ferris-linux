@@ -9,11 +9,11 @@ configure() {
 }
 
 build() {
-    make -j$(nproc)
+    yes | make -j$(nproc)
 }
 
 install() {
-    make INSTALL_PATH="$1/boot" install -j$(nproc)
+    yes | make INSTALL_PATH="$1/boot" install -j$(nproc)
 }
 
 export CFLAGS="-O2"
