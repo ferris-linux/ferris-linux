@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 . "$2"
 
@@ -11,7 +12,7 @@ build() {
 }
 
 install() {
-    mkdir -p "$1/root" "$1/usr" "$1/etc" "$1/usr/share" "$1/home" "$1/bin" "$1/lib" 
+    mkdir -p "$1/root" "$1/usr" "$1/etc" "$1/usr/share" "$1/home" "$1/bin" "$1/lib" "$1/var" "$1/tmp" "$1/proc" "$1/sys" "$1/dev" "$1/mnt" "$1/run" "$1/srv" "$1/boot" "$1/sbin" "$1/usr/bin" "$1/usr/sbin" "$1/usr/lib" "$1/usr/local"
 }
 
 install "$1"

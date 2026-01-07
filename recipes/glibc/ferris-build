@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # $1 - dest, all packages are defaulted to /usr , $2 - sh file which include all functions
 
@@ -19,7 +20,7 @@ build() {
 
 install() {
     cd glibc-build
-    make DESTDIR="$1" install -j$(nproc)
+    make DESTDIR="$1" install
     cd "$1"
     rm -rf lib bin
     echo "Creating symlinks"

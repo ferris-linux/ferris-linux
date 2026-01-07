@@ -1,13 +1,12 @@
 #!/bin/sh
+set -e
 
 . "$2"
 
 url="https://ftp.gnu.org/gnu/wget/wget-1.25.0.tar.gz"
 
 configure() {
-	./configure \
-	  --prefix=/usr \
-	  --with-ssl=openssl
+	./configure --prefix=/usr --with-ssl=openssl
 }
 
 build() {
@@ -15,7 +14,7 @@ build() {
 }
 
 install() {
-	make DESTDIR="$1" install -j$(nproc)
+	make DESTDIR="$1" install
 }
 
 export CFLAGS="-O2"

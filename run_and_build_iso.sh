@@ -1,3 +1,5 @@
+#!/bin/sh
+set -e
 
 IMAGE_NAME=Ferris-Linux-live
 

@@ -1,5 +1,6 @@
 {
 	"name": "wget",
 	"version": "1.25.0",
-	"deps": ["glibc", "openssl", "zlib", "libdin2", "ca-certificates"]
+	"deps": ["glibc", "openssl", "zlib", "libidn2", "ca-certificates"],
+	"also_deps": ["gnutls", "nettle", "libpsl", "util-linux-libs", "prce2"]
 }

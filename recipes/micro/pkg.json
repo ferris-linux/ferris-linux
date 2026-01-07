@@ -1,5 +1,5 @@
 {
     "name": "micro",
     "version": "2.0.15",
-    "deps": ["glibc"]
+    "deps": ["glibc", "base_dirs"]
 }

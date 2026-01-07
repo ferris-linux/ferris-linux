@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 . "$2"
 
@@ -6,7 +7,7 @@ url="https://www.openssl.org/source/openssl-3.6.0.tar.gz"
 
 configure() {
     ./Configure \
-        linux-x86_64 \
+        linux-$(uname -m) \
         --prefix=/usr \
         --libdir=lib \
         shared \
@@ -19,7 +20,7 @@ build() {
 }
 
 install() {
-    make DESTDIR="$1" install_sw -j$(nproc)
+    make DESTDIR="$1" install_sw
 }
 
 export CFLAGS="-O2"

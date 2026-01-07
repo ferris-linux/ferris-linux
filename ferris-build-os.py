@@ -79,7 +79,7 @@ print("Main packages:", main_packages)
 build_initrd_json = {"repo": "https://github.com/ferris-linux/ferris-linux.git", "packages": initrd_packages}
 build_os_json = {"repo": "https://github.com/ferris-linux/ferris-linux.git", "packages": main_packages}
 
-os.system("rm -rf build/build/sysroot && rm -rf build/initramfd.cpio && mkdir -p build ")
+os.system("rm -rf build/build/sysroot && rm -rf build/initramfs.cpio && mkdir -p build ")
 os.chdir("build")
 
 os.system("rm -rf ferris-strap")
@@ -88,7 +88,7 @@ try:
     subprocess.check_call(["git", "clone", "https://github.com/ferris-linux/ferris-strap.git", "ferris-strap", "--depth=1"])
 except subprocess.CalledProcessError:
     print("Git is not installed/corrupted")
-    exit(-1)
+    exit(1)
 
 # build ferris-strap
 

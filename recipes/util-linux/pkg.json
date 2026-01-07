@@ -1,5 +1,6 @@
 {
 	"name": "util-linux",
 	"version": "2.41.3",
-	"deps": ["glibc"]
+	"deps": ["glibc", "file", "coreutils", "ncurses", "readline", "zlib"],
+	"also_deps": ["libcap-ng", "libxcrypt", "systemd-libs", "pam", "shadow", "util-linux-libs"]
 }

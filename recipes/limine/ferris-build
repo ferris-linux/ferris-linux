@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 . "$2"
 
@@ -13,8 +14,8 @@ build() {
 }
 
 install() {
-	mkdir -p $1/boot
-	mkdir -p $1/boot/limine
+	mkdir -p "$1/boot"
+	mkdir -p "$1/boot/limine"
 	cp -v "$script_dir/limine.conf" "$1/boot/limine/"
 	mkdir -p "$1/EFI/BOOT"
 	cp -v limine-bios.sys limine-bios-cd.bin limine-uefi-cd.bin "$1/boot/limine/"
