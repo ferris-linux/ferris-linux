@@ -106,8 +106,12 @@ with open("os_sysroot.json", 'w', encoding='utf-8') as file:
 
 os.system("rm -rf build/output/repo")
 os.system("./ferris-strap-bin initrd_sysroot.json")
+os.system("strip --strip-debug build/sysroot/usr/lib/* && strip --strip-unneeded build/sysroot/usr/bin/* && find build/sysroot/usr/lib -name \*.la -delete")
+os.system("rm -rf build/sysroot/usr/share/info build/sysroot/usr/share/doc build/sysroot/usr/share/info build/sysroot/usr/share/man")
 os.system("cd build/sysroot && find . | cpio -oH newc > ../../initramfs.img")
 os.system("rm -rf build/sysroot")
 os.system("./ferris-strap-bin os_sysroot.json")
+os.system("strip --strip-debug build/sysroot/usr/lib/* && strip --strip-unneeded build/sysroot/usr/bin/* && find build/sysroot/usr/lib -name \*.la -delete")
+os.system("rm -rf build/sysroot/usr/share/info build/sysroot/usr/share/doc build/sysroot/usr/share/info build/sysroot/usr/share/man")
 os.system("rm -rf os_sysroot && cp -rf build/sysroot os_sysroot")
 os.system("cp -rf initramfs.img os_sysroot/boot")
